@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppareilService } from '../services/appareil.service';
 import { Subscription } from 'rxjs';
-
+//import { AppareilService } from '../services/appareil.service';
 
 @Component({
   selector: 'app-appareil-view',
@@ -52,6 +52,14 @@ export class AppareilViewComponent implements OnInit, OnDestroy {
     } else {
       return null;
     }
+  }
+
+  onSave(){
+    this.appareilService.saveAppareilsToServer();
+  }
+
+  onFetch(){
+    this.appareilService.getAppareilsFromServer();
   }
 
   ngOnDestroy(){
